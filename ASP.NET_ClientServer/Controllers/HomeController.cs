@@ -28,6 +28,11 @@ namespace ASP.NET_ClientServer.Controllers
             return View();
         }
 
+        public IActionResult NewTodo()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
