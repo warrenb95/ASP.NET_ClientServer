@@ -2,6 +2,23 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Todos</h1>
-</div>
+@model IEnumerable<TodoDataLibrary.TodoModel>
+
+
+    <div class="text-center">
+        <h1 class="display-4">Todos</h1>
+        <table class="table">
+            @foreach (var todo in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        <a asp-controller="Home" asp-action="Todo" asp-route-id="@todo._id">
+                            @todo.title
+                        </a>
+                    </th>
+                    <td>Worked on for @todo.totaltimespent minutes</td>
+                </tr>
+            }
+
+        </table>
+    </div>

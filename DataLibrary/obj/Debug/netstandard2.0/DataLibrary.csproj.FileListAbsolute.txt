@@ -1,0 +1,5 @@
+C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.deps.json
+C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.dll
+C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.csprojAssemblyReference.cache
+C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.AssemblyInfoInputs.cache
+C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.AssemblyInfo.cs

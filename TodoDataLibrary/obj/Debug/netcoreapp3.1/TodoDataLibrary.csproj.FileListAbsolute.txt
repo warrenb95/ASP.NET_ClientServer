@@ -1,0 +1,8 @@
+C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\TodoDataLibrary\bin\Debug\netcoreapp3.1\TodoDataLibrary.deps.json
+C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\TodoDataLibrary\bin\Debug\netcoreapp3.1\TodoDataLibrary.dll
+C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\TodoDataLibrary\obj\Debug\netcoreapp3.1\TodoDataLibrary.csprojAssemblyReference.cache
+C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\TodoDataLibrary\obj\Debug\netcoreapp3.1\TodoDataLibrary.AssemblyInfoInputs.cache
+C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\TodoDataLibrary\obj\Debug\netcoreapp3.1\TodoDataLibrary.AssemblyInfo.cs
+C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\TodoDataLibrary\bin\Debug\netcoreapp3.1\TodoDataLibrary.pdb
+C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\TodoDataLibrary\obj\Debug\netcoreapp3.1\TodoDataLibrary.dll
+C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\TodoDataLibrary\obj\Debug\netcoreapp3.1\TodoDataLibrary.pdb

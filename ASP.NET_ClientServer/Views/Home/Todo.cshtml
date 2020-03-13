@@ -1,0 +1,55 @@
+﻿@model TodoDataLibrary.TodoModel
+
+@{
+    ViewData["Title"] = "Todo";
+}
+
+    <div class="container">
+        <h1>@Model.title</h1>
+
+        <a class="btn btn-primary" asp-controller="Home" asp-action="Update" asp-route-id="@Model._id">Update</a>
+        <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@Model._id">Delete</a>
+
+        <div class="row my-5 align-items-center">
+            <div class="col-8 align-self-center">
+                Desc: @Model.desc
+            </div>
+            <div class="col align-self-center">
+                <div class="row align-items-center">
+                    <div class="col align-self-center">
+                        Estimate: @Model.estimate
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col align-self-center">
+                        Time spent: @Model.totaltimespent
+                    </div>
+                    <div class="col align-self-center">
+                        <a class="btn btn-success" asp-controller="Home" asp-action="Timespent" asp-route-id="@Model._id">Add time</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if (Model.timespent != null)
+        {
+            <table class="table">
+                <tr>
+                    <th scope="col">Time spent</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">What did you do</th>
+                </tr>
+
+                @foreach (var time in Model.timespent)
+                {
+                    <tr>
+                        <td>@time.timespent</td>
+                        <td>@time.timecreated</td>
+                        <td>@time.desc</td>
+                    </tr>
+                }
+
+            </table>
+        }
+            <a asp-action="Index">Back to Home</a>
+        </div>
+    

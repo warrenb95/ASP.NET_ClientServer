@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ASP.NET_ClientServer.Models;
+using System.Net.Http;
+using TodoDataLibrary;
 
 namespace ASP.NET_ClientServer.Controllers
 {
@@ -16,11 +18,13 @@ namespace ASP.NET_ClientServer.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            ApiHelper.InitializeClient();
         }
 
         public IActionResult Index()
         {
-            return View();
+            var task = TodoProcessor.LoadAllTodos();
+            return View(task.Result);
         }
 
         public IActionResult Privacy()
@@ -28,8 +32,41 @@ namespace ASP.NET_ClientServer.Controllers
             return View();
         }
 
+        public IActionResult Update(String? id)
+        {
+            if (id == null)
+            {
+                Index();
+            }
+
+            return View();
+        }
+
+        public IActionResult Todo(String? id)
+        {
+            if (id == null)
+            {
+                Index();
+            }
+
+            var task = TodoProcessor.LoadTodo(id);
+            
+            return View(task.Result);
+        }
+
         public IActionResult NewTodo()
         {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult NewTodo(Models.TodoModel todoModel)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
             return View();
         }
 

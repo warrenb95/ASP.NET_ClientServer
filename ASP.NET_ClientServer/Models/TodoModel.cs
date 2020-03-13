@@ -15,15 +15,22 @@ namespace ASP.NET_ClientServer.Models
     public class TodoModel
     {
         public String ID { get; set; }
+
         [Display(Name = " Todo title")]
+        [Required(ErrorMessage = " You need to enter a title.")]
         public String Title { get; set; }
-        [Display(Name = "Todo Description")]
+
+        [Display(Name = "Todo description")]
+        [Required(ErrorMessage = " You need to enter a description.")]
         public String Desc { get; set; }
         public System.DateTime TimeCreated { get; set; }
-        public System.DateTime Date { get; set; }
+
         [Display(Name = "Estimation (Minutes)")]
+        [Required(ErrorMessage = " You need to enter an estimation.")]
         public int Estimate { get; set; }
+
         public int TotalTimeSpent { get; set; }
+
         public Timespent[] Timespent { get; set; }
     }
 }
