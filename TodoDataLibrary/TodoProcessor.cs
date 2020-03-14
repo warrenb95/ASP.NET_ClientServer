@@ -45,5 +45,16 @@ namespace TodoDataLibrary
                 }
             }
         }
+
+        public static async void PostTodo(PostTodo todoModel)
+        {
+            var json = JsonConvert.SerializeObject(todoModel);
+
+            using (var content = new StringContent(json, Encoding.UTF8, "application/json"))
+            {
+                var respones = await ApiHelper.client.PostAsync("todo", content);
+                respones.EnsureSuccessStatusCode();
+            }
+        }
     }
 }

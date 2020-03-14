@@ -65,6 +65,11 @@ namespace ASP.NET_ClientServer.Controllers
         {
             if (ModelState.IsValid)
             {
+                var todo = new TodoDataLibrary.PostTodo();
+                todo.title = todoModel.Title;
+                todo.desc = todoModel.Desc;
+                todo.estimate = todoModel.Estimate;
+                TodoProcessor.PostTodo(todo);
                 return RedirectToAction("Index");
             }
             return View();

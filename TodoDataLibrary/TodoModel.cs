@@ -5,6 +5,12 @@ using System.Text.Json.Serialization;
 
 namespace TodoDataLibrary
 {
+    public struct PostTodo
+    {
+        public string title { get; set; }
+        public string desc { get; set; }
+        public int estimate { get; set; }
+    }
     public struct Timespent
     {
         public int timespent { get; set; }
