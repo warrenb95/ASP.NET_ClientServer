@@ -56,5 +56,17 @@ namespace TodoDataLibrary
                 respones.EnsureSuccessStatusCode();
             }
         }
+
+        public static async void UpdateTodo(TodoDataLibrary.TodoModel todoModel)
+        {
+            var json = JsonConvert.SerializeObject(todoModel);
+
+            using (var content = new StringContent(json, Encoding.UTF8, "application/json"))
+            {
+                var respones = await ApiHelper.client.PutAsync("todo/" + todoModel._id, content);
+                respones.EnsureSuccessStatusCode();
+            }
+        }
+
     }
 }

@@ -32,16 +32,6 @@ namespace ASP.NET_ClientServer.Controllers
             return View();
         }
 
-        public IActionResult Update(String? id)
-        {
-            if (id == null)
-            {
-                Index();
-            }
-
-            return View();
-        }
-
         public IActionResult Todo(String? id)
         {
             if (id == null)
@@ -71,6 +61,33 @@ namespace ASP.NET_ClientServer.Controllers
                 todo.estimate = todoModel.Estimate;
                 TodoProcessor.PostTodo(todo);
                 return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult UpdateTodo(String id)
+        {
+            var task = TodoProcessor.LoadTodo(id).Result;
+            var todo = new Models.TodoModel();
+            todo.ID = task._id;
+            todo.Title = task.title;
+            todo.Desc = task.desc;
+            todo.Estimate = task.estimate;
+            return View(todo);
+        }
+
+        public IActionResult UpdateTodo(Models.TodoModel todoModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var todo = new TodoDataLibrary.TodoModel();
+                todo._id = todoModel.ID;
+                todo.title = todoModel.Title;
+                todo.desc = todoModel.Desc;
+                todo.estimate = todoModel.Estimate;
+                TodoProcessor.UpdateTodo(todo);
+                return RedirectToAction("Todo", "Home", new { id = todo._id });
             }
             return View();
         }
