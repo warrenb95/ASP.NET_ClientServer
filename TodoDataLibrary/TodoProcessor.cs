@@ -68,5 +68,10 @@ namespace TodoDataLibrary
             }
         }
 
+        public static async void DeleteTodo(String id)
+        {
+            var respones = await ApiHelper.client.DeleteAsync("todo/" + id);
+        }
+
     }
 }

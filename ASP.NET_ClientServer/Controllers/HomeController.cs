@@ -77,6 +77,13 @@ namespace ASP.NET_ClientServer.Controllers
             return View(todo);
         }
 
+        public IActionResult DeleteTodo(String id)
+        {
+            TodoProcessor.DeleteTodo(id);
+
+            return RedirectToAction("Index", "Home");
+        }
+
         public IActionResult UpdateTodo(Models.TodoModel todoModel)
         {
             if (ModelState.IsValid)
