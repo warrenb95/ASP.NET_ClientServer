@@ -11,7 +11,13 @@ namespace TodoDataLibrary
         public string desc { get; set; }
         public int estimate { get; set; }
     }
-    public struct Timespent
+
+    public struct PostTimeSpent
+    {
+        public int timespent { get; set; }
+        public string desc { get; set; }
+    }
+    public class Timespent
     {
         public int timespent { get; set; }
         public DateTime timecreated { get; set; }

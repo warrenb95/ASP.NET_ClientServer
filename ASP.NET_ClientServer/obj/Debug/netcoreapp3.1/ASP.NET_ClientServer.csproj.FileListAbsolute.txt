@@ -113,3 +113,4 @@ C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\ASP.NET_ClientServer\bin\De
 C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\ASP.NET_ClientServer\obj\Debug\netcoreapp3.1\ASP.NET_ClientServer.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\ASP.NET_ClientServer\obj\Debug\netcoreapp3.1\Razor\Views\Home\Todo.cshtml.g.cs
 C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\ASP.NET_ClientServer\obj\Debug\netcoreapp3.1\Razor\Views\Home\UpdateTodo.cshtml.g.cs
+C:\Users\warre\Documents\GitHub\ASP.NET_ClientServer\ASP.NET_ClientServer\obj\Debug\netcoreapp3.1\Razor\Views\Home\TimeSpent.cshtml.g.cs

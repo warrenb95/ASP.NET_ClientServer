@@ -1,0 +1,38 @@
+﻿@model ASP.NET_ClientServer.Models.Timespent
+
+@{
+    ViewData["Title"] = "TimeSpent";
+}
+
+<h1>TimeSpent</h1>
+
+<h4>TodoModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="TimeSpent">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="timespent" class="control-label"></label>
+                <input asp-for="timespent" class="form-control" />
+                <span asp-validation-for="timespent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="desc" class="control-label"></label>
+                <textarea asp-for="desc" class="form-control"></textarea>
+                <span asp-validation-for="desc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

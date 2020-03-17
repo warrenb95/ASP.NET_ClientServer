@@ -6,17 +6,23 @@ using System.Threading.Tasks;
 
 namespace ASP.NET_ClientServer.Models
 {
-    public struct Timespent
+    public class Timespent
     {
-        public int Duration { get; set; }
-        public System.DateTime Date { get; set; }
-        public String Desc { get; set; }
+        public String ID { get; set; }
+
+        [Display(Name = "Time spent (Minutes)")]
+        [Required(ErrorMessage = " You need to enter a value for time spent.")]
+        public int timespent { get; set; }
+
+        [Display(Name = "Description")]
+        [Required(ErrorMessage = " You need to enter a description.")]
+        public string desc { get; set; }
     }
     public class TodoModel
     {
         public String ID { get; set; }
 
-        [Display(Name = " Todo title")]
+        [Display(Name = "Todo title")]
         [Required(ErrorMessage = " You need to enter a title.")]
         public String Title { get; set; }
 

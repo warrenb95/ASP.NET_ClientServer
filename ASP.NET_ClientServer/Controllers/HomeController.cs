@@ -99,6 +99,33 @@ namespace ASP.NET_ClientServer.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult TimeSpent(String id)
+        {
+            var task = TodoProcessor.LoadTodo(id).Result;
+            var timespent = new Models.Timespent();
+            timespent.ID = task._id;
+            return View(timespent);
+        }
+
+        public IActionResult TimeSpent(Models.Timespent timespentModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var timespent = new TodoDataLibrary.Timespent();
+                var todo = new TodoDataLibrary.TodoModel();
+                timespent.timespent = timespentModel.timespent;
+                timespent.desc = timespentModel.desc;
+                todo._id = timespentModel.ID;
+                todo.timespent = new List<TodoDataLibrary.Timespent>();
+                todo.timespent.Add(timespent);
+
+                TodoProcessor.TimeSpent(todo);
+                return RedirectToAction("Todo", "Home", new { id = timespentModel.ID });
+            }
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

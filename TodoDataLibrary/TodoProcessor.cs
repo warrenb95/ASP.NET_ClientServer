@@ -57,7 +57,7 @@ namespace TodoDataLibrary
             }
         }
 
-        public static async void UpdateTodo(TodoDataLibrary.TodoModel todoModel)
+        public static async void UpdateTodo(TodoModel todoModel)
         {
             var json = JsonConvert.SerializeObject(todoModel);
 
@@ -71,6 +71,21 @@ namespace TodoDataLibrary
         public static async void DeleteTodo(String id)
         {
             var respones = await ApiHelper.client.DeleteAsync("todo/" + id);
+        }
+
+        public static async void TimeSpent(TodoModel todoModel)
+        {
+            var timespent = new PostTimeSpent();
+            timespent.timespent = todoModel.timespent[0].timespent;
+            timespent.desc = todoModel.timespent[0].desc;
+
+            var json = JsonConvert.SerializeObject(timespent);
+
+            using (var content = new StringContent(json, Encoding.UTF8, "application/json"))
+            {
+                var respones = await ApiHelper.client.PutAsync("todo/" + todoModel._id + "/timespent", content);
+                respones.EnsureSuccessStatusCode();
+            }
         }
 
     }
